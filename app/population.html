@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penduduk — AngkaNusa | Indonesia dalam Angka</title>
+<meta name="description" content="Penduduk Indonesia 281,6 juta jiwa (2024): tren 2020–2024, laju pertumbuhan, distribusi pulau, dan tabel provinsi yang bisa disortir. Sumber: BPS dan Dukcapil Kemendagri.">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AN</span><span class="brand-name">AngkaNusa</span><span class="brand-tag">Indonesia dalam Angka</span></a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="population.html">Penduduk</a>
+      <a href="economy.html">Ekonomi</a>
+      <a href="regions.html">Wilayah</a>
+      <a href="data.html">Data &amp; Sumber</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Penduduk: 281,6 Juta Jiwa</h1>
+    <p>Indonesia adalah negara berpenduduk terbesar keempat di dunia. Pertumbuhan melambat, tetapi setiap tahun masih bertambah sekitar 3 juta jiwa — setara satu kota besar baru setiap tahun.</p>
+    <p class="hero-meta">Sumber: BPS, 2024 (proyeksi pertengahan tahun) · Dukcapil Kemendagri, Semester I 2024</p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Tampilan data penduduk">
+    <button class="tab-btn active" data-story-tab="tren">Tren &amp; pertumbuhan</button>
+    <button class="tab-btn" data-story-tab="sebaran">Sebaran pulau</button>
+    <button class="tab-btn" data-story-tab="provinsi">Tabel provinsi</button>
+  </div>
+
+  <div data-story-panel="tren">
+    <div class="grid-2">
+      <section class="card">
+        <h2>Jumlah penduduk, 2020–2024</h2>
+        <p class="unit">Juta jiwa</p>
+        <div class="chart-box" data-chart="line" data-series="populationTrend"></div>
+        <p class="caption">Dari 270,20 juta (2020) menjadi 281,60 juta (2024): +11,40 juta jiwa dalam lima tahun. Sumber: BPS, 2024.</p>
+      </section>
+      <section class="card">
+        <h2>Laju pertumbuhan penduduk</h2>
+        <p class="unit">Persen per tahun</p>
+        <div class="chart-box" data-chart="bar" data-series="populationGrowth"></div>
+        <p class="caption">Laju tumbuh berada di kisaran 1% per tahun dan cenderung melambat. Sumber: BPS, 2024 (dihitung dari seri penduduk).</p>
+      </section>
+    </div>
+    <section class="callout">
+      <strong>Membaca tren:</strong> pertumbuhan 1,04% pada 2024 berarti pertambahan sekitar 2,9 juta jiwa dalam setahun. Tekanan terbesar ada pada layanan dasar — sekolah, kesehatan, perumahan, dan lapangan kerja — terutama di Pulau Jawa.
+    </section>
+  </div>
+
+  <div data-story-panel="sebaran" hidden>
+    <div class="grid-2">
+      <section class="card">
+        <h2>Penduduk menurut pulau</h2>
+        <p class="unit">Pangsa dari total penduduk nasional</p>
+        <div class="chart-box" data-chart="donut" data-series="islandShare"></div>
+        <p class="caption">Pulau Jawa: 157,39 juta jiwa (55,93%). Pangsa pulau lain dihitung dari jumlah penduduk provinsi (BPS, 2024). Sumber utama: Dukcapil Kemendagri, Semester I 2024.</p>
+      </section>
+      <section class="card">
+        <h2>Kenapa Jawa begitu padat?</h2>
+        <p class="story">Jawa menampung <strong>55,93% penduduk</strong> di atas lahan yang hanya sekitar 7% luas daratan Indonesia. Kepadatan nasional 149 jiwa/km² — tetapi DKI Jakarta mencapai <strong>16.165 jiwa/km²</strong>, lebih dari 100 kali lipat angka nasional.</p>
+        <p class="story">Sebaliknya, Papua Selatan menjadi provinsi dengan penduduk paling sedikit: 545.861 jiwa (Dukcapil, Semester I 2024). Ketimpangan sebaran inilah yang membuat pemerataan pembangunan menjadi agenda statistik terpenting di halaman Wilayah.</p>
+        <p><a href="regions.html">Lihat peta wilayah &rarr;</a></p>
+      </section>
+    </div>
+  </div>
+
+  <div data-story-panel="provinsi" hidden>
+    <section class="card">
+      <h2>12 provinsi terpadat, 2024</h2>
+      <p class="unit">Klik judul kolom untuk mengurutkan · ketik untuk mencari · pilih pulau untuk memfilter</p>
+      <div class="table-tools">
+        <input type="search" id="provSearch" placeholder="Cari provinsi… (mis. Jawa)" aria-label="Cari provinsi">
+        <select id="provIsland" aria-label="Filter pulau">
+          <option value="all">Semua pulau</option>
+          <option value="Jawa">Jawa</option>
+          <option value="Sumatera">Sumatera</option>
+          <option value="Sulawesi">Sulawesi</option>
+        </select>
+      </div>
+      <table class="data" id="provTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th data-sort="name">Provinsi ↕</th>
+            <th data-sort="island">Pulau ↕</th>
+            <th data-sort="pop" class="num">Penduduk (jt) ↕</th>
+            <th class="num">Pangsa nasional</th>
+            <th data-sort="density" class="num">Kepadatan (jiwa/km²) ↕</th>
+          </tr>
+        </thead>
+        <tbody id="provBody"></tbody>
+      </table>
+      <p class="table-note" id="provCount"></p>
+      <p class="source-line">Sumber: Badan Pusat Statistik (BPS), 2024 — jumlah penduduk menurut provinsi. Kepadatan dikutip untuk provinsi Pulau Jawa (BPS, 2024); “—” berarti tidak dikutip di halaman ini. Pangsa = penduduk provinsi ÷ 281,6 juta.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p><strong>AngkaNusa</strong> — portal statistik nasional independen. Rincian sumber dan metodologi: <a href="data.html">Data &amp; Sumber</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

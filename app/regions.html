@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wilayah — AngkaNusa | Indonesia dalam Angka</title>
+<meta name="description" content="38 provinsi Indonesia: penduduk terpadat, kepadatan, dan pangsa pulau. Kartu provinsi dengan filter pulau dan grafik kepadatan Pulau Jawa. Sumber: BPS dan Dukcapil, 2024.">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AN</span><span class="brand-name">AngkaNusa</span><span class="brand-tag">Indonesia dalam Angka</span></a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="population.html">Penduduk</a>
+      <a href="economy.html">Ekonomi</a>
+      <a href="regions.html">Wilayah</a>
+      <a href="data.html">Data &amp; Sumber</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Wilayah: 38 Provinsi, 17.380 Pulau</h1>
+    <p>Dari Jawa Barat (50,35 juta jiwa) sampai Papua Selatan (545.861 jiwa) — sebaran penduduk Indonesia adalah salah satu yang paling timpang di dunia. Halaman ini memetakan ketimpangan itu provinsi demi provinsi.</p>
+    <p class="hero-meta">Sumber: BPS, 2024 · Dukcapil Kemendagri, Semester I 2024</p>
+  </section>
+
+  <h2 class="section-title">Peta sederhana: pangsa penduduk menurut pulau</h2>
+  <p class="section-sub">Skema blok proporsional — lebar tiap blok sebanding dengan pangsa penduduk pulau tersebut.</p>
+  <section class="card" aria-label="Peta skematik pangsa pulau">
+    <svg viewBox="0 0 640 120" role="img" aria-label="Blok proporsional pangsa penduduk: Jawa 55,9 persen, Sumatera 20,7 persen, sisanya di pulau lain">
+      <rect x="0" y="10" width="357" height="56" rx="6" fill="#0e6e6a"/>
+      <text x="178" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">JAWA · 55,9%</text>
+      <text x="178" y="56" text-anchor="middle" font-size="12" fill="#cfe8e5">157,39 jt jiwa</text>
+      <rect x="363" y="10" width="132" height="56" rx="6" fill="#f2a33c"/>
+      <text x="429" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#231303">SUMATERA</text>
+      <text x="429" y="56" text-anchor="middle" font-size="12" fill="#4a2c05">20,7%</text>
+      <rect x="501" y="10" width="139" height="56" rx="6" fill="#17a398"/>
+      <text x="570" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">PULAU LAIN</text>
+      <text x="570" y="56" text-anchor="middle" font-size="12" fill="#e0f2f1">23,4%</text>
+      <text x="0" y="92" font-size="12" fill="#475467">Kalimantan 5,8% · Sulawesi 7,1% · Bali &amp; Nusa Tenggara 5,5% · Maluku &amp; Papua 5,0%</text>
+      <text x="0" y="112" font-size="12" fill="#667085">Sumber: Dukcapil Kemendagri Semester I 2024 (Jawa); pangsa pulau lain dihitung dari total provinsi, BPS 2024.</text>
+    </svg>
+  </section>
+
+  <h2 class="section-title">Kartu provinsi</h2>
+  <p class="section-sub">Filter berdasarkan pulau — setiap kartu menunjukkan penduduk, pangsa nasional, dan kepadatan bila tersedia.</p>
+  <div class="tabs" role="group" aria-label="Filter pulau">
+    <button class="chip active" data-region="all">Semua pulau</button>
+    <button class="chip" data-region="Jawa">Jawa</button>
+    <button class="chip" data-region="Sumatera">Sumatera</button>
+    <button class="chip" data-region="Sulawesi">Sulawesi</button>
+  </div>
+  <p class="table-note" id="regionCount">12 provinsi ditampilkan</p>
+
+  <div class="grid-3" id="regionCards" style="margin-top:12px">
+    <article class="card region-card" data-island="Jawa">
+      <h3>Jawa Barat</h3><p class="big">50,35 jt jiwa</p>
+      <p>Pangsa nasional 17,88% · kepadatan 1.359 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Jawa">
+      <h3>Jawa Timur</h3><p class="big">41,81 jt jiwa</p>
+      <p>Pangsa nasional 14,85% · kepadatan 870 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:83%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Jawa">
+      <h3>Jawa Tengah</h3><p class="big">37,89 jt jiwa</p>
+      <p>Pangsa nasional 13,45% · kepadatan 1.104 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sumatera">
+      <h3>Sumatera Utara</h3><p class="big">15,59 jt jiwa</p>
+      <p>Pangsa nasional 5,54% · provinsi terpadat di luar Jawa</p>
+      <div class="bar-track"><div class="bar-fill" style="width:31%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Jawa">
+      <h3>Banten</h3><p class="big">12,43 jt jiwa</p>
+      <p>Pangsa nasional 4,41% · kepadatan 1.329 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Jawa">
+      <h3>DKI Jakarta</h3><p class="big">10,68 jt jiwa</p>
+      <p>Pangsa nasional 3,79% · kepadatan 16.165 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:21%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sumatera">
+      <h3>Lampung</h3><p class="big">9,40 jt jiwa</p>
+      <p>Pangsa nasional 3,34%</p>
+      <div class="bar-track"><div class="bar-fill" style="width:19%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sulawesi">
+      <h3>Sulawesi Selatan</h3><p class="big">9,36 jt jiwa</p>
+      <p>Pangsa nasional 3,32% · provinsi terpadat di Sulawesi</p>
+      <div class="bar-track"><div class="bar-fill" style="width:19%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sumatera">
+      <h3>Sumatera Selatan</h3><p class="big">8,99 jt jiwa</p>
+      <p>Pangsa nasional 3,19%</p>
+      <div class="bar-track"><div class="bar-fill" style="width:18%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sumatera">
+      <h3>Riau</h3><p class="big">6,94 jt jiwa</p>
+      <p>Pangsa nasional 2,46%</p>
+      <div class="bar-track"><div class="bar-fill" style="width:14%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Sumatera">
+      <h3>Sumatera Barat</h3><p class="big">5,76 jt jiwa</p>
+      <p>Pangsa nasional 2,05%</p>
+      <div class="bar-track"><div class="bar-fill" style="width:11%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+    <article class="card region-card" data-island="Jawa">
+      <h3>DI Yogyakarta</h3><p class="big">3,75 jt jiwa</p>
+      <p>Pangsa nasional 1,33% · kepadatan 1.193 jiwa/km²</p>
+      <div class="bar-track"><div class="bar-fill" style="width:7%"></div></div>
+      <p class="source-line">Sumber: BPS, 2024</p>
+    </article>
+  </div>
+
+  <h2 class="section-title">Kepadatan penduduk Pulau Jawa</h2>
+  <section class="card">
+    <p class="unit">Jiwa per km² · 2024 · DKI Jakarta jauh di atas yang lain</p>
+    <div class="chart-box" data-chart="density" data-series="provinces"></div>
+    <p class="caption">DKI Jakarta 16.165 jiwa/km² — hampir 12 kali Jawa Barat dan 108 kali rata-rata nasional (149 jiwa/km²). Sumber: BPS, 2024.</p>
+  </section>
+
+  <section class="callout">
+    <strong>Catatan geografi:</strong> luas daratan Indonesia 1.890.180 km² dengan 17.380 pulau dan 718 bahasa daerah (BPS, 2024). Jumlah provinsi saat ini 38 — termasuk empat provinsi baru di Papua. Tabel lengkap 12 provinsi terpadat ada di halaman <a href="population.html">Penduduk</a>.
+  </section>
+
+  <footer>
+    <p><strong>AngkaNusa</strong> — portal statistik nasional independen. Rincian sumber dan metodologi: <a href="data.html">Data &amp; Sumber</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

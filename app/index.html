@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AngkaNusa — Indonesia dalam Angka | Portal Statistik Nasional</title>
+<meta name="description" content="Portal statistik nasional Indonesia: penduduk 281,6 juta, PDB Rp22.139 triliun, inflasi, pengangguran, kemiskinan, IPM, dan 38 provinsi. Semua angka bersumber dari BPS dan Kemendagri, 2024.">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AN</span><span class="brand-name">AngkaNusa</span><span class="brand-tag">Indonesia dalam Angka</span></a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="population.html">Penduduk</a>
+      <a href="economy.html">Ekonomi</a>
+      <a href="regions.html">Wilayah</a>
+      <a href="data.html">Data &amp; Sumber</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Indonesia dalam Angka — 281,6 Juta Jiwa, Satu Cerita Data</h1>
+    <p>Portal statistik nasional: penduduk, ekonomi, pembangunan manusia, dan 38 provinsi — diringkas dari publikasi resmi Badan Pusat Statistik (BPS) dan Kementerian Dalam Negeri, tahun data 2024.</p>
+    <p class="hero-meta">Terakhir diperbarui: 26 November 2026 · Semua angka mencantumkan sumber dan tahun · Tanpa pelacakan, tanpa iklan</p>
+  </section>
+
+  <section class="hero-chart">
+    <h2>Pertumbuhan penduduk, 2020–2024</h2>
+    <p class="unit">Juta jiwa · pertengahan tahun · Sumber: BPS, 2024</p>
+    <div class="chart-box" data-chart="line" data-series="populationTrend"></div>
+    <p class="caption">Penduduk bertambah 11,4 juta jiwa dalam lima tahun. Laju tumbuh melambat: 1,04% pada 2024 — setiap tahun masih bertambah sekitar 3 juta jiwa, setara satu kota besar baru.</p>
+  </section>
+
+  <h2 class="section-title">Indikator utama 2024</h2>
+  <p class="section-sub">Delapan angka yang paling sering dicari — klik menu di atas untuk bedah lengkap tiap topik.</p>
+  <div class="kpi-grid" id="kpiGrid" aria-live="polite"></div>
+
+  <div class="grid-2" style="margin-top:16px">
+    <section class="card">
+      <h2>Pertumbuhan ekonomi, 2021–2024</h2>
+      <p class="unit">Persen (y-on-y) · PDB harga konstan</p>
+      <div class="chart-box" data-chart="bar" data-series="gdpGrowth"></div>
+      <p class="caption">Ekonomi tumbuh 5,03% pada 2024 dengan PDB Rp22.139 triliun. Sumber: BPS, BRS 5 Februari 2025.</p>
+      <p><a href="economy.html">Bedah ekonomi &rarr;</a></p>
+    </section>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px">
+    <section class="card">
+      <h2>Provinsi terpadat</h2>
+      <p class="unit">Juta jiwa · 2024</p>
+      <div class="chart-box" data-chart="hbars" data-series="provinces"></div>
+      <p class="caption">Tiga provinsi di Pulau Jawa — Jawa Barat, Jawa Timur, Jawa Tengah — menampung 130,1 juta jiwa, sekitar 46% penduduk nasional. Sumber: BPS, 2024.</p>
+      <p><a href="regions.html">Lihat semua wilayah &rarr;</a></p>
+    </section>
+    <section class="card">
+      <h2>Di mana penduduk tinggal?</h2>
+      <p class="unit">Pangsa penduduk menurut pulau</p>
+      <div class="chart-box" data-chart="donut" data-series="islandShare"></div>
+      <p class="caption">Pulau Jawa menampung 55,93% penduduk di atas lahan yang hanya sekitar 7% luas daratan Indonesia. Sumber: Dukcapil Kemendagri, Semester I 2024.</p>
+    </section>
+  </div>
+
+  <section class="callout">
+    <strong>Tiga hal yang perlu diketahui:</strong>
+    Kemiskinan turun ke 9,03% (Maret 2024) — terendah dalam sejarah pencatatan. IPM naik ke 75,02 dengan umur harapan hidup 74,15 tahun. Namun kesenjangan wilayah masih lebar: kepadatan DKI Jakarta 16.165 jiwa/km² berbanding 149 jiwa/km² secara nasional.
+  </section>
+
+  <h2 class="section-title">Jelajahi topik</h2>
+  <div class="grid-3">
+    <article class="card">
+      <h3>Penduduk</h3>
+      <p>Tren 2020–2024, laju pertumbuhan, distribusi pulau, dan tabel 12 provinsi terpadat yang bisa disortir.</p>
+      <p><a href="population.html">Buka halaman Penduduk &rarr;</a></p>
+    </article>
+    <article class="card">
+      <h3>Ekonomi</h3>
+      <p>PDB, inflasi, pengangguran, kemiskinan, dan Gini — lima seri waktu 2020–2024 dalam satu halaman.</p>
+      <p><a href="economy.html">Buka halaman Ekonomi &rarr;</a></p>
+    </article>
+    <article class="card">
+      <h3>Wilayah</h3>
+      <p>38 provinsi, peta pangsa pulau, kartu provinsi dengan filter, dan kepadatan penduduk Pulau Jawa.</p>
+      <p><a href="regions.html">Buka halaman Wilayah &rarr;</a></p>
+    </article>
+  </div>
+
+  <footer>
+    <p><strong>AngkaNusa</strong> — portal statistik nasional independen, bukan situs resmi pemerintah. Angka dikutip dari publikasi resmi; rincian sumber dan metodologi ada di halaman <a href="data.html">Data &amp; Sumber</a>. Tahun data utama: 2024.</p>
+    <p>Sumber utama: Badan Pusat Statistik (BPS) · Ditjen Dukcapil Kemendagri · Kementerian Keuangan RI.</p>
+  </footer>
+</main>
+</body>
+</html>

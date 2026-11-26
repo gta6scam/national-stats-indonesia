@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekonomi — AngkaNusa | Indonesia dalam Angka</title>
+<meta name="description" content="Ekonomi Indonesia 2024: PDB Rp22.139 triliun, tumbuh 5,03%, inflasi 1,57%, pengangguran 4,91%, kemiskinan 9,03%. Seri waktu 2020–2024 dari BPS.">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">AN</span><span class="brand-name">AngkaNusa</span><span class="brand-tag">Indonesia dalam Angka</span></a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="population.html">Penduduk</a>
+      <a href="economy.html">Ekonomi</a>
+      <a href="regions.html">Wilayah</a>
+      <a href="data.html">Data &amp; Sumber</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Ekonomi: Tumbuh 5,03% pada 2024</h1>
+    <p>PDB mencapai Rp22.139 triliun dengan PDB per kapita Rp78,6 juta (USD 4.960,3). Inflasi mereda ke 1,57%, pengangguran turun ke 4,91%, dan kemiskinan ke 9,03% — tetapi kualitas pekerjaan masih menjadi pekerjaan rumah.</p>
+    <p class="hero-meta">Sumber: BPS, Berita Resmi Statistik No. 17/02/Th. XXVIII, 5 Februari 2025; dan publikasi BPS 2024</p>
+  </section>
+
+  <h2 class="section-title">Lima seri waktu, satu halaman</h2>
+  <p class="section-sub">Pilih indikator di bawah — grafik dan keterangannya berganti mengikuti pilihan Anda.</p>
+  <div class="tabs" role="tablist" aria-label="Pilih indikator ekonomi">
+    <button class="tab-btn active" data-econ-tab="gdpGrowth" aria-selected="true">Pertumbuhan PDB</button>
+    <button class="tab-btn" data-econ-tab="gdpNominal" aria-selected="false">PDB nominal</button>
+    <button class="tab-btn" data-econ-tab="inflation" aria-selected="false">Inflasi</button>
+    <button class="tab-btn" data-econ-tab="unemployment" aria-selected="false">Pengangguran</button>
+    <button class="tab-btn" data-econ-tab="poverty" aria-selected="false">Kemiskinan</button>
+  </div>
+
+  <section class="card">
+    <h2 id="econTitle">Pertumbuhan ekonomi (PDB)</h2>
+    <div class="chart-box" id="econChart" data-chart="bar" data-series="gdpGrowth"></div>
+    <p class="caption" id="econCaption">Pertumbuhan ekonomi (PDB), 2021–2024 · persen (y-on-y) · Sumber: Badan Pusat Statistik (BPS), Berita Resmi Statistik No. 17/02/Th. XXVIII, 5 Februari 2025</p>
+  </section>
+
+  <div class="grid-2" style="margin-top:14px">
+    <section class="card">
+      <h2>Inflasi mereda tajam</h2>
+      <p class="unit">Inflasi tahun kalender (%)</p>
+      <div class="chart-box" data-chart="line" data-series="inflation"></div>
+      <p class="caption">Dari 5,51% pada 2022 menjadi 1,57% pada 2024. Sumber: BPS, 2024.</p>
+    </section>
+    <section class="card">
+      <h2>Pengangguran terus turun</h2>
+      <p class="unit">TPT Agustus (%)</p>
+      <div class="chart-box" data-chart="line" data-series="unemployment"></div>
+      <p class="caption">TPT Agustus 2024 sebesar 4,91% — lebih rendah dari sebelum pandemi (Februari 2020: 4,94%). Sumber: BPS, 2024.</p>
+    </section>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px">
+    <section class="card">
+      <h2>Kemiskinan: 9,03%</h2>
+      <p class="unit">Maret 2020–2024 · persen penduduk</p>
+      <div class="chart-box" data-chart="line" data-series="poverty"></div>
+      <p class="caption">25,22 juta penduduk miskin pada Maret 2024; garis kemiskinan Rp582.932 per kapita per bulan. Rasio Gini 0,379. Sumber: BPS, Profil Kemiskinan Maret 2024.</p>
+    </section>
+    <section class="card">
+      <h2>Apa yang menggerakkan 2024?</h2>
+      <ul class="fact-list">
+        <li><span>Lapangan usaha tumbuh tercepat<span class="fact-note">BPS, 2025</span></span><span class="fact-val">Jasa Lainnya +9,80%</span></li>
+        <li><span>Komponen pengeluaran tumbuh tercepat<span class="fact-note">BPS, 2025</span></span><span class="fact-val">Konsumsi LNPRT +12,48%</span></li>
+        <li><span>Perdagangan — kontribusi ke PDB<span class="fact-note">BPS, 2025</span></span><span class="fact-val">13,07%</span></li>
+        <li><span>Penduduk bekerja, Februari 2024<span class="fact-note">BPS, 2024</span></span><span class="fact-val">142,18 jt orang</span></li>
+        <li><span>Angkatan kerja, Agustus 2024<span class="fact-note">BPS, 2024</span></span><span class="fact-val">152,11 jt orang</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="callout">
+    <strong>Membaca angka bersama:</strong> pertumbuhan 5,03% dengan inflasi 1,57% dan TPT 4,91% adalah kombinasi yang sehat — tetapi 7,2 juta penganggur (Februari 2024) dan lulusan SMK dengan TPT 8,62% menunjukkan lapangan kerja belum sepenuhnya menyerap angkatan kerja muda.
+  </section>
+
+  <footer>
+    <p><strong>AngkaNusa</strong> — portal statistik nasional independen. Rincian sumber dan metodologi: <a href="data.html">Data &amp; Sumber</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
